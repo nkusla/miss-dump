@@ -1,17 +1,21 @@
-include("params.jl")
 include("func.jl")
 
+path = "n_body/3_body.csv"
 a = Animation()
-X = [20.0 20.0; -20.0 -20.0;]# 30.0 -30.0]
-M = [1e13, 1e13, 1e13]
-V = [0.0 -1.0; 0.0 1.0; 0.0 0.0]
-#V = zeros(N, dim)
-A = zeros(N, dim)
 
+M, X, V = read_data(path)
+printstyled("Data read from: $(path)\n", color = :blue)
+
+n = length(M)
+A = zeros(2, n)
+
+
+# Main loop
 for t in 0:dt:endt
-	calc_acceleration!(X, M, A, V)
-	update_positions!(X, A, V)
+	calc_acceleration!(n, X, M, A, V)
+	update_positions!(n, X, A, V)
 	save_frame!(a, X)
 end
 
-gif(a, "n_body/anim.gif", fps = 30)
+gif_path = replace(path, ".csv" => ".gif")
+gif(a, gif_path, fps = 30)
