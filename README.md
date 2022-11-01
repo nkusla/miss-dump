@@ -6,7 +6,11 @@ Pored toga repozitorijum sadrži neke lične projekte koji su rađeni tokom seme
 
 ## N-body simulacija
 
-2-body sistem | 3-body sistem
-:-------------------------:|:-------------------------:
-![](n_body/2_body.gif)	|	![](n_body/3_body.gif)
----
+| 2-body sistem | 3-body sistem |
+| :---: | :---: |
+| ![](n_body/2_body.gif) | ![](n_body/3_body.gif) |
+
+| Sistem sa sudarima |
+| :---: |
+| ![](n_body/direct_collision.gif) |
+
