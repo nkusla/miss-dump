@@ -1,8 +1,6 @@
 # MiSS repozitorijum
 
-U ovom repozitorijumu se nalaze rešenja zadataka sa vežbi iz predmeta *Modeliranje i simulacija sistema*. \
-Pored toga repozitorijum sadrži neke lične projekte koji su rađeni tokom semestra. Sve je napisano u programskom jeziku 
-[Julia](https://docs.julialang.org).
+U ovom repozitorijumu se nalaze rešenja zadataka sa računarskih vežbi iz predmeta *Modeliranje i simulacija sistema*. Pored toga repozitorijum sadrži neke lične projekte koji su rađeni tokom semestra, nevezano za gradivo predmeta. Sve je napisano u programskom jeziku [Julia](https://docs.julialang.org).
 
 Za pokretanje Julia fajlova potrebno je otvoriti **REPL** okruženje i instalirati sledeće pakete:
 
@@ -23,4 +21,3 @@ Svi tekstovi zadatak i materijali sa vežbi se nalaze na sajtu katedre za *[Auto
 | Sistem sa sudarima |
 | :---: |
 | ![](n_body/direct_collision.gif) |
-

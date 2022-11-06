@@ -25,10 +25,12 @@ prob_1 = ODEProblem(dif_jednacina!, pocetni_1, interval, params)
 sol_1 = solve(prob_1)
 
 plt_0 = plot(sol_0,
+	title="Plot 0",
 	xlabel = "t",
 	ylabel = "u(t)")
 
 plt_1= plot(sol_1,
+	title="Plot 1",
 	xlabel = "t",
 	ylabel = "u(t)")
 

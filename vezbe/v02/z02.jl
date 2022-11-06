@@ -15,4 +15,5 @@ y = y0 .* (tp .< pi/6)
 
 plot!(plt, t, y,
 	label="y(t)",
+	xtick=0:pi:2*pi,
 	color=:blue)
