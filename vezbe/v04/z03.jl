@@ -61,4 +61,9 @@ plt_pos_new = plot(sol_new.t, [pos_3, pos_5],
 			xlabel="t")
 
 # Crtanje svih grafika
-plot(plt_F, plt_pos, plt_pos_new, layout=(3,1))
+plt_final = plot(plt_F, plt_pos, plt_pos_new, layout=(3,1))
+display(plt_final)
+
+# Cuvanje grafika
+dir = dirname(@__FILE__())
+savefig(plt_final, "$dir/z03.png")

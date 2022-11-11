@@ -34,4 +34,8 @@ plt_1= plot(sol_1,
 	xlabel = "t",
 	ylabel = "u(t)")
 
-plot(plt_0, plt_1, layout = (2, 1))
+plt_final = plot(plt_0, plt_1, layout = (2, 1))
+display(plt_final)
+
+dir = dirname(@__FILE__())
+savefig(plt_final, "$dir/z01.png")

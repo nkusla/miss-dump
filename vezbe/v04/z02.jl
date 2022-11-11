@@ -48,4 +48,9 @@ scatter!(plt_ubrz, [sol.t[index]], [ubrz[index]],
 		markerstyle=:circle, markersize=3)
 
 # Crtanje svih grafika
-plot(plt_F, plt_sol, plt_ubrz, layout=(3,1))
+plt_final = plot(plt_F, plt_sol, plt_ubrz, layout=(3,1))
+display(plt_final)
+
+# Cuvanje grafika
+dir = dirname(@__FILE__())
+savefig(plt_final, "$dir/z02.png")
