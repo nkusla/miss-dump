@@ -11,9 +11,9 @@ function sistem!(dx, x, p, t)
 	J = 1/2 * m1 * R^2
 
 	dx[1] = x[2]
-	dx[2] = 1/J * (-c*R*x[2] - k2*(x[3]+R*x[1]) - k1*x[1])
+	dx[2] = 1/J * (-c*R*x[2] - k2*(x[3]+R*x[1])*R - k1*x[1])
 	dx[3] = x[4]
-	dx[4] = 1/m2 * (-k2*(x[3]+R*x[1]) - f(t))
+	dx[4] = 1/m2 * (-k2*(x[3]+R*x[1]) + f(t))
 end
 
 # Crtanje pobudne sile F

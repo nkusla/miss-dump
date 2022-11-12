@@ -12,7 +12,7 @@ function sistem!(dx, x, p, t)
 	dx[1] = x[2]
 	dx[2] = 1/m1 * (-c*(x[2]-x[4]) - 2*k*x[1] + k*x[3] + m1*g)
 	dx[3] = x[4]
-	dx[4] = 1/m2 * (c*(x[2]-x[4]) - k*(2*x[3]-x[1]-x[5]) + m2*g)
+	dx[4] = 1/m2 * (c*(x[2]-x[4]) - k*(3*x[3]-x[1]-x[5]) + m2*g)
 	dx[5] = x[6]
 	dx[6] = 1/m3 * (k*(x[3]-x[5]) + m3*g - f(t))
 end
@@ -33,7 +33,7 @@ sol = solve(prob)
 
 # Izdvajanje pozicije prvog i drugog tela
 pos_1 = [u[1] for u in sol.u]
-pos_2 = [u[2] for u in sol.u]
+pos_2 = [u[3] for u in sol.u]
 
 plt_pos = plot(sol.t, [pos_1, pos_2],
 			label=["pozicija 1" "pozicija 2"])
@@ -49,15 +49,17 @@ scatter!(plt_pos,
 		markerstyle=:circle, markersize=3)
 
 # Rastojanje drugog i treceg tela za drugi pocetni uslov
-pocetni[3] = pocetni[5] = 2.0
+# (uzimamo da je drugo telo u ravnoteznom polozaju, a trece za dva udaljeno od njega)
+pocetni[5] = 2.0
 prob_new = ODEProblem(sistem!, pocetni, interval, p)
 sol_new = solve(prob_new)
 
-pos_3 = [u[3] for u in sol_new.u]
-pos_5 = [u[5] for u in sol_new.u]
+pos_2 = [u[3] for u in sol_new.u]
+pos_3 = [u[5] for u in sol_new.u]
+rastojanje = abs.(pos_2 .- pos_3)
 
-plt_pos_new = plot(sol_new.t, [pos_3, pos_5],
-			label=["pozicija 3" "pozicija 5"],
+plt_pos_new = plot(sol_new.t, rastojanje,
+			label="rastojanje",
 			xlabel="t")
 
 # Crtanje svih grafika
