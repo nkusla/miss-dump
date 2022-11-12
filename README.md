@@ -14,6 +14,8 @@ Svi tekstovi zadatak i materijali sa vežbi se nalaze na sajtu katedre za *[Auto
 
 ## N-body simulacija
 
+Implementirana jednostavna simulacija sistema sa N čestica. Korišćen Njutnov zakon gravitacije i numerički metod za integraljenje Njutnovih jednačina kretanja u klasičnoj mehanici. Pored toga implementirana i detekcija sudara, gde se dve ili više čestica sabija u jednu.
+
 | 2-body sistem | 3-body sistem |
 | :---: | :---: |
 | ![](n_body/2_body.gif) | ![](n_body/3_body.gif) |
