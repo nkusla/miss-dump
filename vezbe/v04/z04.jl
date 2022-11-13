@@ -10,7 +10,7 @@ function sistem!(dx, x, p, t)
 	m1, m2, c1, c2, k1, k2, g = p
 
 	dx[1] = x[2]
-	dx[2] = 1/m1 * (-c1*x[2] - k2*(x[1]-x[3]) + f(t))
+	dx[2] = 1/m1 * (-c1*x[2] - k1*(x[1]-x[3]) + f(t))
 	dx[3] = x[4]
 	dx[4] = 1/m2 * (-c2*x[4] - k2*x[3] + k1*(x[1]-x[3]) - m2*g)
 end
