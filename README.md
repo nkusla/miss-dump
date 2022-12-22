@@ -6,6 +6,7 @@ Za pokretanje Julia fajlova potrebno je otvoriti **REPL** okruženje i instalira
 
 - [Plots](https://docs.juliaplots.org/stable/)
 - [DifferentialEquations](https://diffeq.sciml.ai/stable/)
+- [ControlSystems](https://juliacontrol.github.io/ControlSystems.jl/dev/)
 - [ProgressBars](https://juliapackages.com/p/progressbars)
 
 ## Literatura i izvori
@@ -14,7 +15,7 @@ Svi tekstovi zadatak i materijali sa vežbi se nalaze na sajtu katedre za *[Auto
 
 ## N-body simulacija
 
-Implementirana jednostavna simulacija sistema sa N čestica. Korišćen Njutnov zakon gravitacije i numerički metod za integraljenje Njutnovih jednačina kretanja u klasičnoj mehanici. Pored toga implementirana i detekcija sudara, gde se dve ili više čestica sabija u jednu.
+Implementirana jednostavna simulacija sistema sa N čestica. Korišćen Njutnov zakon gravitacije i numerički metod za integraciju Njutnovih jednačina kretanja u klasičnoj mehanici. Pored toga implementirana i detekcija sudara, gde se dve ili više čestica sabija u jednu.
 
 | 2-body sistem | 3-body sistem |
 | :---: | :---: |
@@ -23,3 +24,9 @@ Implementirana jednostavna simulacija sistema sa N čestica. Korišćen Njutnov 
 | Sistem sa sudarima |
 | :---: |
 | ![](n_body/direct_collision.gif) |
+
+## Implementacija numeričkih algoritama
+
+| Njutn-Rapsonov metod | Ojlerov metod | 
+| :---: | :---: |
+| ![](numericki/newton_raphson.gif) | ![](numericki/euler.gif) |
