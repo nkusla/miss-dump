@@ -27,6 +27,11 @@ Implementirana jednostavna simulacija sistema sa N čestica. Korišćen Njutnov 
 
 ## Implementacija numeričkih algoritama
 
-| Njutn-Rapsonov metod | Ojlerov metod | 
+| Njutn-Rapsonov metod | 
+| :---: |
+| ![](numericki/newton_raphson.gif) |
+
+|			Ojlerov metod 			||
 | :---: | :---: |
-| ![](numericki/newton_raphson.gif) | ![](numericki/euler.gif) |
+| ![](numericki/euler1.gif) | ![](numericki/euler2.gif) |
+| ![](numericki/euler2ad.png) |
