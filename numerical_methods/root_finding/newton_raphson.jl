@@ -5,7 +5,7 @@ function newton_raphson!(f, f_prime, x0, epsilon, plt_f, plt_interval, animation
 	
 	x1 = x0
 	k = 0
-	while (abs(f(x0)) > epsilon)
+	while (abs(f(x0)) >= epsilon)
 		println("$k:  $x1")
 		# plotting tangent of function f
 		plt_tangent = plot(plt_f, (x) -> f(x0) + f_prime(x0)*(x - x0), 
@@ -37,10 +37,12 @@ plt_interval = -3:0.01:3
 # Creating initial plot
 plt_f = plot(f, plt_interval, xticks=-3:0.5:3, lw=3, label=false)
 plot!(plt_f, (x) -> 0, plt_interval, color=:gray, label=false)	# plotting x-axis
-display(plt_f)
+frame(animation, plt_f)
 
 printstyled("--- Newton-Raphson method ---\n\n", color=:cyan)
-newton_raphson!(f, f_prime, x0, epsilon, plt_f, plt_interval, animation)
+solution = newton_raphson!(f, f_prime, x0, epsilon, plt_f, plt_interval, animation)
+printstyled("\nSolution: ", color=:yellow)
+print(solution)
 
 # Saving gif
 path = replace(@__FILE__(), ".jl" => ".gif")

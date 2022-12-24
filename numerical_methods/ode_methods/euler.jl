@@ -71,7 +71,7 @@ end
 animation1 = Animation()
 animation2 = Animation()
 
-y_prime(y,x) = exp(-y) 			# differential equation
+y_prime(y,x) = exp(-y)			# differential equation
 y_sol(x) = log(x + 1/exp(1))	# analytical solution
 y0 = -1.0						# inital conditions
 x0 = 0.0
