@@ -31,9 +31,9 @@ W11, W12, W21, W22 = sistem()
 u1, u2 = cos.(t), sin.(t)
 
 y11, _, _ = lsim(W11, u1', t)
-y12, _, _ = lsim(W12, u1', t)
+y12, _, _ = lsim(W12, u2', t)
 y21, _, _ = lsim(W21, u1', t)
-y22, _, _ = lsim(W22, u1', t)
+y22, _, _ = lsim(W22, u2', t)
 
 y1 = y11' + y12'
 y2 = y21' + y22'
