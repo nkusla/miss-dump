@@ -11,7 +11,7 @@ function sistem()
 	W11 = minreal(feedback(G1, W11))
 
 	W12 = series(G4, -G3)
-	W12 = series(W12, -G1)
+	W12 = series(W12, G1)
 	W12 = minreal(feedback(W12, G2)) 
 
 	W21 = series(G1, -G2)
