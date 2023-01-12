@@ -21,7 +21,7 @@ prob = ODEProblem(sistem!, pocetni, interval, (u))
 sol = solve(prob)
 
 # Crtanje ulaza
-plt_ulaz = plot(t, u, xticks=0:1:10, label="u(t)")
+plt_ulaz = plot(u, t, xticks=0:1:10, label="u(t)")
 
 # Crtanje izlaza
 y = [x[5] for x in sol.u]

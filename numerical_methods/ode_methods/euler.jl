@@ -2,7 +2,7 @@ using Plots
 
 # First order Euler method
 function euler1(y_prime, y0, x0, x_end, step)
-	
+
 	X = collect(x0:step:x_end)
 	Y = [y0]
 	while(x0 <= x_end)
@@ -47,8 +47,8 @@ function euler2ad(y_prime, y0, x0, x_end, error_threshold, step_min)
 		if(abs(epsilon) > error_threshold)
 			step /= 2
 			change_step = true
-			if(step < step_min) 
-				step = step_min 
+			if(step < step_min)
+				step = step_min
 			end
 		end
 
@@ -86,7 +86,7 @@ plt_sol = plot(y_sol, plt_interval, lw=1, label="analytical solution", legend=:b
 # Testing all functions and creating gifs
 while(step >= 0.01)
 	Y, X = euler1(y_prime, y0, x0, x_end, step)
-	plt_final = scatter(plt_sol, X, Y, 
+	plt_final = scatter(plt_sol, X, Y,
 				title="Euler 1st order\nFixed step = $step", titlefontsize=12, color=:yellow, markersize=1.5, label="numerical solution")
 	frame(animation1, plt_final)
 	step /= 2
@@ -95,7 +95,7 @@ end
 step = 1
 while(step >= 0.01)
 	Y, X = euler2(y_prime, y0, x0, x_end, step)
-	plt_final = scatter(plt_sol, X, Y, 
+	plt_final = scatter(plt_sol, X, Y,
 				title="Euler 2nd order\nFixed step = $step", titlefontsize=12, color=:yellow, markersize=1.5, label="numerical solution")
 	frame(animation2, plt_final)
 	step /= 2

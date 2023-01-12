@@ -15,6 +15,8 @@ Ili pokrenuti fajl `install.jl`.
 
 Svi tekstovi zadatak i materijali sa vežbi se nalaze na sajtu katedre za *[Automatiku](http://www.automatika.ftn.uns.ac.rs/nastavni-materijali-miss)*. Svi direktorijumi unutar direktorijuma `vezbe/` su imenovani istim imenom kao i odgovarajući pdf dokumenti.
 
+---
+
 ## N-body simulacija
 
 Implementirana jednostavna simulacija sistema sa N čestica. Korišćen Njutnov zakon gravitacije i numerički metod za integraciju Njutnovih jednačina kretanja u klasičnoj mehanici. Pored toga implementirana i detekcija sudara, gde se dve ili više čestica sabija u jednu. Izvorni kod se nalazi u direktorijumu `n_body/`
@@ -27,13 +29,19 @@ Implementirana jednostavna simulacija sistema sa N čestica. Korišćen Njutnov 
 | :---: |
 | ![](n_body/direct_collision.gif) |
 
+---
+
 ## Numerički algoritmi
 
 Implementirani numerički algoritmi za traženja korena (nula) funkcije i za rešavanje običnih diferencijalnih jednačina. Izvorni kod se nalazi u direktorijumu `numerical_methods/`
 
 | Metod podele intervala | Njutn-Rapsonov metod |
 | :---: | :---: |
-| ![](numerical_methods/root_finding/bisection.gif) | ![](numerical_methods/root_finding/newton_raphson.gif) | 
+| ![](numerical_methods/root_finding/bisection.gif) | ![](numerical_methods/root_finding/newton_raphson.gif) |
+
+|	Metoda integracije (Naivan pristup) 	|
+| :---: |
+| ![](numerical_methods/ode_methods/integration_method.gif) |
 
 |			Ojlerov metod 			||
 | :---: | :---: |
