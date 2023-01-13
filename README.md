@@ -33,11 +33,21 @@ Implementirana jednostavna simulacija sistema sa N čestica. Korišćen Njutnov 
 
 ## Numerički algoritmi
 
-Implementirani numerički algoritmi za traženja korena (nula) funkcije i za rešavanje običnih diferencijalnih jednačina. Izvorni kod se nalazi u direktorijumu `numerical_methods/`
+Implementirani numerički algoritmi za traženja korena (nula) funkcije, za rešavanje običnih diferencijalnih jednačina i za rešavanje sistema algebarskih jednačina (linearnih i nelinearnih). Izvorni kod se nalazi u direktorijumu `numerical_methods/`
+
+### Metode za traženje nule funkcije
 
 | Metod podele intervala | Njutn-Rapsonov metod |
 | :---: | :---: |
 | ![](numerical_methods/root_finding/bisection.gif) | ![](numerical_methods/root_finding/newton_raphson.gif) |
+
+### Metode za rešavanje sistema algebarskih jednačina (linearnih i nelinearnih)
+
+|	Gaus-Njutnov metod 	| 	Gradijentni spust 	|
+| :---: | :---: |
+| ![](numerical_methods/algebraic_system_methods/gauss_newton.gif) | ![](numerical_methods/algebraic_system_methods/gradient.gif) |
+
+### Metode za rešavanje ODJ
 
 |	Metoda integracije (Naivan pristup) 	|
 | :---: |
