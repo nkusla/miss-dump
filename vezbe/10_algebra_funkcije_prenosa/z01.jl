@@ -26,13 +26,13 @@ function sistem()
 	W11 = series(W11, G346)
 	W11 = minreal(feedback(G12, W11))
 
-	W12 = series(G12, G5)
-	W12 = series(W12, G346)
-	W12 = minreal(feedback(W12, 1/G4))
+	W12 = series(G346, 1/G4)
+	W12 = series(W12, -G12)
+	W12 = minreal(feedback(W12, -G5))
 
-	W21 = series(G346, 1/G4)
-	W21 = series(W21, -G12)
-	W21 = minreal(feedback(W21, -G5))
+	W21 = series(G12, G5)
+	W21 = series(W21, G346)
+	W21 = minreal(feedback(W21, 1/G4))
 
 	W22 = series(1/G4, -G12)
 	W22 = series(W22, G5)
@@ -54,7 +54,6 @@ y22, _, _ = lsim(W22, u2', t)
 y1 = y11' + y12'
 y2 = y21' + y22'
 
-plt = plot(t, y1, label="y1(t)", xlabel="t")
-plot!(plt, t, y2, label="y2(t)")
+plt = plot(t, [y1, y2], label=["y1(t)" "y2(t)"], xlabel="t")
 
 savefig(plt, replace(@__FILE__(), ".jl" => ".png"))

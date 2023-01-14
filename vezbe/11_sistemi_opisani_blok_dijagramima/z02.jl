@@ -24,7 +24,7 @@ sol = solve(prob)
 plt_ulaz = plot(u, t, xticks=0:1:10, label="u(t)")
 
 # Crtanje izlaza
-y = [x[5] for x in sol.u]
+y = [x[3] for x in sol.u]
 plt_izlaz = plot(sol.t, y, label="y(t)", xlabel="t[s]")
 
 # Cuvanje grafika

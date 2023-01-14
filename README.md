@@ -1,13 +1,13 @@
 # MiSS repozitorijum
 
-U ovom repozitorijumu se nalaze rešenja zadataka sa računarskih vežbi iz predmeta *Modeliranje i simulacija sistema*. Pored toga repozitorijum sadrži neke lične projekte koji su rađeni tokom semestra, nevezano za gradivo predmeta. Sve je napisano u programskom jeziku [Julia](https://docs.julialang.org).
+U ovom repozitorijumu se nalaze rešenja zadataka sa računarskih vežbi iz predmeta *Modeliranje i simulacija sistema*. Pored toga repozitorijum sadrži neke lične projekte koji su rađeni tokom semestra, nevezano za gradivo predmeta. Sve je napisano u programskom jeziku [Julia](https://docs.julialang.org), verzija: [1.8.2](https://julialang.org/downloads/oldreleases/).
 
 Za pokretanje Julia fajlova potrebno je otvoriti **REPL** okruženje i instalirati sledeće pakete:
 
-- [Plots](https://docs.juliaplots.org/stable/)
-- [DifferentialEquations](https://diffeq.sciml.ai/stable/)
-- [ControlSystems](https://juliacontrol.github.io/ControlSystems.jl/dev/)
-- [ProgressBars](https://juliapackages.com/p/progressbars)
+- [Plots v1.35.5](https://docs.juliaplots.org/stable/)
+- [DifferentialEquations v7.6.0](https://diffeq.sciml.ai/stable/)
+- [ControlSystems v1.5.4](https://juliacontrol.github.io/ControlSystems.jl/dev/)
+- [ProgressBars v1.4.1](https://juliapackages.com/p/progressbars)
 
 Ili pokrenuti fajl `install.jl`.
 
