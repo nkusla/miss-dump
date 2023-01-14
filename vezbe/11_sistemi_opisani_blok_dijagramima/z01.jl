@@ -1,7 +1,5 @@
 using DifferentialEquations, Plots
 
-### GRESKA: predugo se kompajluje
-
 function f_step(t)
 	tp = rem(t, 2)
 	y = 4 * (tp < 1)
@@ -23,7 +21,11 @@ interval = (0.0, 10.0)
 pocetni = [0.0, -1.0, 1.0]
 
 prob = ODEProblem(sistem!, pocetni, interval, (ulaz))
-sol = solve(prob)
+
+# Ispostavi se da je ovo stiff problem (resenje ima nagle skokove i padove),
+# zbog toga su neki numericki algoritmi nestabilni za resavanje. Pa je
+# potrebno izabrati algoritam koji je napravljen za stiff probleme
+sol = solve(prob, alg_hints=[:stiff])
 
 # Crtanje ulaza
 plt_u = plot(t, f_step, label="", ylabel="u(t)", color=:red, linestyle=:dash)

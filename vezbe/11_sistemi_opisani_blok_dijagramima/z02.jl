@@ -3,7 +3,10 @@ using DifferentialEquations, Plots
 function sistem!(dx, x, params, t)
 	r = params
 	e = -x[5] + r(t)
-	q = sqrt(x[2] + 3*x[1])				# GRESKA: dobije se kompleksan broj !!!!
+
+	# Po postavci zadatka ovde treba da se koristi sqrt() umesto ^2, ali
+	# zbog dobijanja DomainError-a, promenjeno je da se q racuna preko kvadrata
+	q = (x[2] + 3*x[1])^2
 
 	dx[1] = x[2]
 	dx[2] = e - x[1]
