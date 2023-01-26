@@ -13,7 +13,7 @@ Ili pokrenuti fajl `install.jl`.
 
 ## Literatura i izvori
 
-Svi tekstovi zadatak i materijali sa vežbi se nalaze na sajtu katedre za *[Automatiku](http://www.automatika.ftn.uns.ac.rs/nastavni-materijali-miss)*. Svi direktorijumi unutar direktorijuma `vezbe/` su imenovani istim imenom kao i odgovarajući pdf dokumenti.
+Svi tekstovi zadatak i materijali sa vežbi se nalaze na sajtu katedre za *[Automatiku](http://www.automatika.ftn.uns.ac.rs/nastavni-materijali-miss)*. Svi direktorijumi unutar direktorijuma `vezbe/` su imenovani istim imenom kao i odgovarajući pdf dokumenti. Takođe, u direktorijumu `skripte/` se nalazi skripta pisana za oblast *Modeli fizičkih sistema*. Skripta je pisana u $\LaTeX$ sistemu.
 
 ---
 

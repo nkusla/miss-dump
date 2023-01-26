@@ -1,0 +1,201 @@
+\documentclass[10pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{parskip}
+
+\pagenumbering{gobble}
+
+\newcommand{\question}[1]{\section*{#1}}
+\newcommand{\subquestion}[1]{{\large \it #1}}
+
+\linespread{1.2}
+
+% Margine stranice
+\newgeometry{
+	top=0.25in,
+	bottom=0.50in,
+	outer=1.0in,
+	inner=1.0in
+}
+
+% Naslovna strana
+\title{\bf Modeli fizičkih sistema \\ (Modeliranje i simulacija sistema)}
+\author{Nikola Kušlaković\\\\
+https://github.com/nkusla/miss-dump}
+\date{Januar 2022.}
+
+\begin{document}
+	\maketitle
+
+	\chapter*{Modeli fizičkih sistema}
+
+	\section*{Translatorni mehanički sistemi}
+
+		\textbf{Promenljive} (sve zavise od vremena):
+		\begin{itemize}
+			\item $x$ - rastojanje $[m]$
+			\item $v$ - brzina $[\frac{m}{s}]$, važi $v=\frac{dx}{dt}=\dot{x}$
+			\item $a$ - ubrzanje $[\frac{m}{s^2}]$, važi $a=\frac{dv}{dt}=\frac{d^2x}{dt^2}=\ddot{x}$
+			\item $f$ - sila $[N]$
+		\end{itemize}
+
+		\textbf{Elementi}:
+		\begin{itemize}
+			\item Masa - mera inertnosti tela $[m]$
+			\item Trenje - javlja se kada se dva tela dodiruju i kreću različitim brzinama (npr. trenje podloge, prigušnica...).
+			Najčešće opisano linearnom formulom: $f_t = c \cdot \Delta v$, gde je $c$ koeficijent trenja $[\frac{Ns}{m}]$,
+			a $\Delta v$ razlika brzina dva tela.
+			\item Elastičnost - javlja se kod istegnute opruge. Najčešće opisana linearnom formulom: $f_e = k \cdot \Delta x$, gde je $k$
+			koeficijent elastičnosti $[\frac{N}{m}]$, a $\Delta x$ razlika pozicija dva tela.
+		\end{itemize}
+
+		\textbf{Zakonitosti}:
+		\begin{itemize}
+			\item I Njutnov zakon - svako telo teži da ostane u stanju mirovanja ili kretanja, sve dog ga drugo telo ne primora da to stanje promeni.
+			\item II Njutnov zakon - sila koja deluje na telo jednaka je proizvodu mase i ubrzanja tog tela.
+			$$f = m \cdot a = m \cdot \frac{dv}{dt}$$
+			\item III Njutnov zakon - svaka sila akcije na neko telo ima svoju silu reakcije koja je istog itenziteta, ali suprotnog smera.
+			\item Dalamberov zakon - suma svih spoljašnjih sila koje deluju na telo i unutrašnje inercijalne sile jednaka je 0.
+		\end{itemize}
+
+	\section*{Rotacioni mehanički sistemi}
+
+		\textbf{Promenljive} (sve zavise od vremena):
+		\begin{itemize}
+			\item $\theta$ - ugao $[rad]$
+			\item $\omega$ - ugaona brzina $[\frac{rad}{s}]$, važi $\omega=\frac{d\theta}{dt}=\dot{\theta}$
+			\item $\alpha$ - ugaono ubrzanje $[\frac{rad}{s^2}]$, važi $\alpha=\frac{d\omega}{dt}=\frac{d^2\theta}{dt^2}=\ddot{\theta}$
+			\item $\tau$ - moment sile $[Nm]$
+		\end{itemize}
+
+		\textbf{Elementi}:
+		\begin{itemize}
+			\item Moment inercije - velicina koja oposuje koliko se telo opire rotacionom kretanju. Zavisi od oblika tela,
+			raspodele mase tele i ose oko koje telo rotira. Označava se sa $J$ $[kg m^2]$
+
+			Moment inercije materijalne tačke mase $\Delta m$ koja rotira na rastojanju $r$ od ose je:
+			$$J = \Delta m \cdot r^2$$
+
+			\item Trenje usled rotacije - algebarska veza momenta sile i relativne ugaone brzine
+			između dve površi koje se dodiruju.
+				$$\tau_t = c \cdot \Delta\omega$$
+			gde je $c$ - koeficijent trenja $[Nms]$.
+
+			\item Elastičnost usled uvrtanja - algebarska veza momenta sile i relativnog ugaonog pomeraja.
+				$$\tau_e = k \cdot \Delta\theta$$
+			gde je $k$ - koeficijent elastičnosti $[Nm]$.
+
+			\item Poluga - često uzimamo da je poluga idealna i da nema masu, trenje, moment inercije, unutrašnju energiju.
+			Za male pomeraje krajevi poluge se kreću translatorno.
+				$$\varphi = \frac{x_1}{L_1} = \frac{x_2}{L_2}$$
+
+			gde je $\varphi$ ugao koji poluga zaklapa sa horizontalom, $x$ je pomeraji, a $L$ dužina dela poluge merene od oslonca poluge.
+
+			\item Zupčanici - uzimamo da su idealni pa onda važi da nemaju moment inercije, trenje, unutrašnju energiju i zubci im savršeno naležu.
+			Uvodi se veličina zupčastog prenosa $N$ - odnos broja zubaca.
+				$$R_1\theta_1 = R_2\theta_2 \implies \frac{\theta_1}{\theta_2} = \frac{R_2}{R_1} = \frac{z_2}{z_1} = N$$
+			gde je $R$ poluprečnik zupčanika, $\theta$ ugaoni pomeraj i $z$ broj zubaca zupčanika.
+
+		\end{itemize}
+
+		\textbf{Zakonitosti}:
+		\begin{itemize}
+			\item II Njutnov zakon rotacije - moment sile koji deluje na telo jednak je proizvodu momenta inercije i ugaonog ubrzanja tela.
+			$$\tau = J \cdot \dot{\omega}$$
+			\item Zakon reakcije momenata sila (posledica III Njutnov zakona) - posmatramo dva tela koja rotiraju oko iste ose. Ako momentom sile jadno telo deluje na drugo onda
+			i drugo telo momentom sile reakcije deluje na prvo telo istom intenzitetom ali suprotnom smerom.
+			\item Dalamberov zakon - isto kao i kod translatornih sistema...
+			\item Zakon ugaonih pomeraja - suma razlika ugaonih pomeraja duž zatvorene putanje jednak je 0.
+			$$\sum_{i}^{} \theta_i=0 $$
+		\end{itemize}
+
+	\section*{Termički sistemi}
+
+		\textbf{Promenljive}:
+		\begin{itemize}
+			\item $\theta$ - temperatura $[K]$. Najčešće se smatra da je temepratura u svim deolvima tela ista i da je jednaka prosečnoj temperaturi.
+			\item $q$ - količina toplote u sekundi $[\frac{J}{s}]=[W]$
+		\end{itemize}
+
+		\textbf{Elementi} - 2 pasivna i 1 aktivan element:
+		\begin{itemize}
+			\item Termička kapacitivnost - daje vezu između temperature tela i akumulirane toplote. Zavisnost se može posmatrati kao linearna:
+			$$\dot{\theta}(t) = \frac{1}{C}(q_{in}(t) - q_{out}(t))$$
+
+			$C$ - toplotni kapacitet tela $[\frac{J}{K}]$, računa se po formuli $C = m \cdot \sigma$, gde je $\sigma$ specifična toplota tela.
+
+			\item Termička otpornost - posmatramo provođenje toplote. Provođenje toplote sa jednog tela na drugo telo je srazmerno razlici
+			temperatura dva tela. Matematički:
+			$$q(t) = \frac{1}{R}(\theta_2(t) - \theta_1(t))$$
+
+			$R$ - termička otpornost $[\frac{Ks}{J}]$, zavisi od karakteristike materijala i računa se po formuli $R = \frac{d}{A\alpha}$,
+			gde su $d$, $A$ i  $\alpha$ redom debljina, površina poprečnog preseka i termička provodljivost (podatak iz tabele).
+
+			\item Termički izvor - može biti izvor koji dovodi ili odvodi toplotu iz sistema. Uzimamo da je količina toplote koja
+			se dovde pozitivna, a ona koja se odvede negativna.
+
+		\end{itemize}
+
+		\textbf{Zakonitosti}: važe zakoni termodinamike...
+
+	\section*{Sistemi sa fluidima}
+		\textbf{Promenljive}:
+		\begin{itemize}
+			\item q - zapremnski protok $[\frac{m^3}{s}]$
+			\item V - zapremina $[m^3]$
+			\item h - visina (nivo) tečnosti $[m]$
+			\item p - pritisak $[\frac{N}{m^2}] = [Pa]$. Ponekad se posmatra u odnosu na atmosferski pritisak $P_a$
+		\end{itemize}
+
+		\textbf{Elementi}:
+		\begin{itemize}
+			\item Pumpa
+			\item Ventil
+		\end{itemize}
+
+		\textbf{Zakonitosti}:
+		\begin{itemize}
+			\item Bernulijeva jednačina
+		\end{itemize}
+
+	\section*{Električni i elektromehanički sistemi}
+	\textbf{Promenljive}:
+	\begin{itemize}
+		\item $u$ - napon $[V]$
+		\item $i$ - jačina električne struje $[A]$
+		\item $f_e$ - elektromagnetna sila $[N]$
+		\item $v$ - brzina provodnika u odnosu na magnetno polje $[\frac{m}{s}]$
+		\item $l$ - dužina provodnika u magnetnom polju $[m]$
+		\item $\phi$ - magnetni fluks $[Wb]$
+		\item $B$ -magnetna indukcija $[\frac{Wb}{m^2}]=[T]$
+		\item $\epsilon$ - indukovana elektromotorna sila $[V]$
+	\end{itemize}
+
+	\textbf{Pasivni elementi}:
+	\begin{itemize}
+		\item Otpornik otpornosti R $[R]$ - $u(t) = R \cdot i(t)$
+		\item Kalem induktinvosti L $[H]$ - $u(t) = L \cdot \frac{di_L(t)}{dt}$
+		\item Kondenzator kapaciteta C $[F]$ - $i(t) = R \cdot \frac{du_C(t)}{dt}$
+	\end{itemize}
+	\textbf{Aktivni elementi}:
+	\begin{itemize}
+		\item Idealan naponski generator
+		\item Idealan strujni izvor
+	\end{itemize}
+
+	\textbf{Zakonitosti}:
+	\begin{itemize}
+		\item Omov zakon
+		\item I Kirhofov zakon - algebarska suma struja koje ulaze i izlaze iz čvora jednaka je 0
+		\item II Kirhofov zakon - algebarska suma napona po zatvorenoj konturi jednaka je 0
+		\item Amperova sila - na pravolinijski provodnik dužine $l$, kroz koji protiče struja jačine $i$ i koji se kreće u homogenom
+		magnetnom polju indukcije $B$ deluje sila intenziteta:
+			$$f_e = \vec{i}l \times \vec{B} = ilB \cdot sin(\theta)$$
+		gde je $\theta$ ugao koje zaklapaju vektori $\vec{i}$ i $\vec{B}$
+		\item Indukovanje elektromotorne sile - kretanje provodnika brzinom $v$ u homogenom magnetnom indukuje elektromotornu silu:
+			$$\epsilon = \vec{v}l \times \vec{B} = ilB \cdot sin(\theta)$$
+
+	\end{itemize}
+
+\end{document}
