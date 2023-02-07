@@ -45,7 +45,7 @@ Implementirani numerički algoritmi za traženja korena (nula) funkcije, za reš
 
 |	Gaus-Njutnov metod 	| 	Gradijentni spust 	|
 | :---: | :---: |
-| ![](numerical_methods/algebraic_system_methods/gauss_newton.gif) | ![](numerical_methods/algebraic_system_methods/gradient.gif) |
+| ![](numerical_methods/optimization_methods/gauss_newton.gif) | ![](numerical_methods/optimization_methods/gradient.gif) |
 
 ### Metode za rešavanje ODJ
 
